@@ -54,9 +54,9 @@ public class Main {
         System.out.print("\nMatricula: ");
         String matricula = scanner.next();
         System.out.print("\nNome: ");
-        String nome = scanner.nextLine();
+        String nome = scanner.next();
         System.out.print("\nCurso: ");
-        String curso =  scanner.nextLine();
+        String curso =  scanner.next();
         System.out.println(controleAlunos.cadastraAluno(matricula,nome,curso));
     }
 
@@ -71,7 +71,7 @@ public class Main {
 
     private static void cadastraGrupo(ControleDeAlunos controleAlunos, Scanner scanner) {
         System.out.print("\nGrupo: ");
-        String tema = scanner.nextLine();
+        String tema = scanner.next();
         System.out.print("\nTamanho: ");
         int tamanho = scanner.nextInt();
         System.out.println(controleAlunos.cadastraGrupo(tema, tamanho));
@@ -81,13 +81,13 @@ public class Main {
         System.out.println("Matricula: ");
         String matricula = scanner.next();
         System.out.println("Grupo: ");
-        String grupo = scanner. nextLine();
+        String grupo = scanner. next();
         System.out.println(controleAlunos.alocarAluno(matricula,grupo));
     }
 
     private static void pertinenciaAGrupos(ControleDeAlunos controleAlunos, Scanner scanner) {
         System.out.println("Grupo: ");
-        String grupo = scanner.nextLine();
+        String grupo = scanner.next();
         System.out.println("Aluno: ");
         String aluno = scanner.next();
         System.out.println(controleAlunos.pertinenteEmGrupo(grupo,aluno));
