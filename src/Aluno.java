@@ -6,7 +6,7 @@ public class Aluno {
     private String matricula;
     private String nome;
     private String curso;
-    private Validador validador = new Validador();;
+    private Validador validador = new Validador();
 
     public Aluno(String matricula, String nome, String curso){
         this.validador.validaString(matricula, "Matricula não deve ser nula ou vazia.");
@@ -16,18 +16,6 @@ public class Aluno {
         this.nome = nome;
         this.curso = curso;
 
-    }
-
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public String getCurso() {
-        return curso;
-    }
-
-    public String getNome() {
-        return nome;
     }
 
     @Override
