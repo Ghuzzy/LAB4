@@ -1,18 +1,20 @@
 import utils.Validador;
 
+import java.util.HashSet;
 import java.util.Objects;
 
 public class Grupo {
     private final String tema;
-    private final Aluno[] alunos;
+    private final HashSet<Aluno> alunos;
 
-    private int indice = 0;
+    private int tamanho;
 
     public Grupo(String tema, int tamanho){
         Validador validador = new Validador();
         validador.validaString(tema, "O tema não pode ser nulo ou vazio");
         this.tema = tema;
-        this.alunos = new Aluno[tamanho];
+        this.alunos = new HashSet<>();
+        this.tamanho = tamanho;
     }
 
     @Override
@@ -29,28 +31,20 @@ public class Grupo {
     }
 
     public boolean alunoEmGrupo(Aluno alunoACadastrar) {
-        for(Aluno aluno : this.alunos){
-            if(!(aluno == null)){
-                if( aluno.equals(alunoACadastrar)){
+        if(this.alunos.contains(alunoACadastrar)){
                     return true;
-                }
             }
-        }
         return false;
     }
 
     public void adicionaAluno(Aluno aluno) {
-        if(indice < this.alunos.length) {
-            this.alunos[indice] = aluno;
-            this.indice += 1;
+        if(this.alunos.size() < this.tamanho) {
+            this.alunos.add(aluno);
         }
     }
 
     @Override
     public String toString() {
-        if(indice < this.alunos.length) {
-            return "- " + this.tema + " " + (indice + 1) + "/" + this.alunos.length;
-        }
-        return "- " + this.tema + " " + indice + "/" + this.alunos.length;
+        return "- " + this.tema + " " + this.alunos.size() + "/" + this.tamanho;
     }
 }

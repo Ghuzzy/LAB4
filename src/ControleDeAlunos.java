@@ -8,41 +8,54 @@ public class ControleDeAlunos {
 
     public String cadastraAluno(String matricula, String nome, String curso) {
         Aluno aluno = new Aluno(matricula,nome,curso);
+        String resp = "";
         if(!this.alunos.containsKey(matricula)) {
             this.alunos.put(matricula, aluno);
-            return "CADASTRO REALIZADO";
+            resp = "CADASTRO REALIZADO";
+        }else {
+            resp = "MATRÍCULA JÁ CADASTRADA!";
         }
-        return "MATRÍCULA JÁ CADASTRADA!";
+        return resp;
     }
 
     public String exibeInfoAluno(String matricula) {
+        String resp = "";
         if(this.alunos.containsKey(matricula)){
-            return this.alunos.get(matricula).toString();
+            resp = this.alunos.get(matricula).toString();
+        }else {
+            resp = "ALUNO NÃO CADASTRADO.";
         }
-        return "ALUNO NÃO CADASTRADO.";
+        return resp;
     }
 
     public String cadastraGrupo(String tema, int tamanho) {
+        String resp = "";
         if(!this.grupos.containsKey(tema)){
             Grupo grupo = new Grupo(tema, tamanho);
             this.grupos.put(tema, grupo);
-            return "CADASTRO REALIZADO";
+            resp = "CADASTRO REALIZADO";
+        } else {
+            resp = "TEMA JÁ CADASTRADO";
         }
-        return "TEMA JÁ CADASTRADO";
+        return resp;
     }
 
     public String alocarAluno(String matricula, String grupo) {
+        String resp = "ALUNO ALOCADO!";
         if(!this.grupos.get(grupo).alunoEmGrupo(this.alunos.get(matricula))){
             this.grupos.get(grupo).adicionaAluno(this.alunos.get(matricula));
         }
-        return "ALUNO ALOCADO!";
+        return resp;
     }
 
     public String pertinenteEmGrupo(String grupo, String aluno) {
+        String resp = "";
         if(this.grupos.get(grupo).alunoEmGrupo(this.alunos.get(aluno))){
-            return "ALUNO PERTENCE AO GRUPO";
+            resp = "ALUNO PERTENCE AO GRUPO";
+        }else {
+            resp = "ALUNO NÃO PERTENCE AO GRUPO";
         }
-        return "ALUNO NÃO PERTENCE AO GRUPO";
+        return resp;
     }
 
     public void exibeGrupos(String matricula) {
