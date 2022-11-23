@@ -78,13 +78,20 @@ public class ControleDeAlunos {
      * @return String: Sempre retorna que o aluno foi alocado.
      */
     public String alocarAluno(String matricula, String grupo) {
-        String resp = alunoEGrupoCadastrado(matricula, grupo);
-        alunoEGrupoCadastrado(matricula, grupo);
-         if(!this.grupos.get(grupo).alunoEmGrupo(this.alunos.get(matricula))){
-            this.grupos.get(grupo).adicionaAluno(this.alunos.get(matricula));
-            resp = "ALUNO ALOCADO!";
+        String resp = "";
+        if (alunoCadastrado(matricula) && grupoCadastrado(grupo)){
+         if (!this.grupos.get(grupo).alunoEmGrupo(this.alunos.get(matricula))) {
+                this.grupos.get(grupo).adicionaAluno(this.alunos.get(matricula));
+                resp = "ALUNO ALOCADO!";
+            } else {
+                resp = "ALUNO ALOCADO!";
+            }
+        }else if(!(alunoCadastrado(matricula) && grupoCadastrado(grupo))){
+            resp = "ALUNO E GRUPO NÃO CADASTRADOS";
+        }else if(!alunoCadastrado(matricula)){
+            resp = "ALUNO NÃO CADASTRADO";
         }else{
-            resp = "ALUNO ALOCADO!";
+            resp = "GRUPO NÃO CADASTRADO";
         }
         return resp;
     }
@@ -100,10 +107,18 @@ public class ControleDeAlunos {
      */
     public String pertinenteEmGrupo(String grupo, String aluno) {
         String resp = "";
-        if(this.grupos.get(grupo).alunoEmGrupo(this.alunos.get(aluno))){
-            resp = "ALUNO PERTENCE AO GRUPO";
-        }else {
-            resp = "ALUNO NÃO PERTENCE AO GRUPO";
+        if(alunoCadastrado(aluno) && grupoCadastrado(grupo)) {
+            if (this.grupos.get(grupo).alunoEmGrupo(this.alunos.get(aluno))) {
+                resp = "ALUNO PERTENCE AO GRUPO";
+            } else {
+                resp = "ALUNO NÃO PERTENCE AO GRUPO";
+            }
+        }else if(!(alunoCadastrado(aluno) && grupoCadastrado(grupo))){
+            resp = "ALUNO E GRUPO NÃO CADASTRADOS";
+        }else if(!alunoCadastrado(aluno)){
+            resp = "ALUNO NÃO CADASTRADO";
+        }else{
+            resp = "GRUPO NÃO CADASTRADO";
         }
         return resp;
     }
@@ -121,16 +136,18 @@ public class ControleDeAlunos {
             }
         }
         }
-    private String alunoEGrupoCadastrado(String matricula, String grupo){
-         String resp = "";
-        if((!this.alunos.containsKey(matricula)) && (!this.grupos.containsKey(grupo)) ){
-            resp = "ALUNO E GRUPO NÃO CADASTRADO";
-        } else if (!this.grupos.containsKey(grupo)) {
-            resp = "GRUPO NÃO CADASTRADO";
-        } else if (!this.alunos.containsKey(matricula)) {
-            resp = "ALUNO NÃO CADASTRADO";
+
+    private boolean alunoCadastrado(String matricula){
+        if((!this.alunos.containsKey(matricula))){
+            return false;
         }
-        return resp;
+        return true;
+    }
+    private boolean grupoCadastrado(String grupo){
+        if((!this.grupos.containsKey(grupos))){
+            return false;
+        }
+        return true;
     }
 
 }
