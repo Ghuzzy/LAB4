@@ -1,3 +1,5 @@
+package main;
+
 import utils.Validador;
 
 import java.util.HashSet;
@@ -59,7 +61,7 @@ public class Grupo {
     }
 
     /**
-     * Recebe um objeto do tipo Aluno e verifica se este faz parte deste grupo.
+     * Recebe um objeto do tipo main.Aluno e verifica se este faz parte deste grupo.
      *
      * @param alunoACadastrar
      * @return boolean: Retorna se o aluno está ou não no grupo.

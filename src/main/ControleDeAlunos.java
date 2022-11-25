@@ -1,3 +1,5 @@
+package main;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -52,7 +54,7 @@ public class ControleDeAlunos {
     }
 
     /**
-     * Cadastra um novo Grupo em Sistema caso este já não esteja cadastrado.
+     * Cadastra um novo main.Grupo em Sistema caso este já não esteja cadastrado.
      *
      * @param tema: tema do grupo a ser cadastrado.
      * @param tamanho: tamanho limite do grupo.

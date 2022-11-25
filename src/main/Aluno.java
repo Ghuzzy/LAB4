@@ -1,3 +1,5 @@
+package main;
+
 import utils.Validador;
 
 import java.util.Objects;
@@ -25,7 +27,7 @@ public class Aluno {
     private Validador validador = new Validador();
 
     /**
-     *  Constrói um objeto do tipo Aluno e recebe como parametros matricula, nome e curso do aluno
+     *  Constrói um objeto do tipo main.Aluno e recebe como parametros matricula, nome e curso do aluno
      *  Caso receba parametros inválidos deve retornar erro de argumento illegal.
      *
      * @param matricula: Representa o numero de matricula do aluno, na qual identifica sua unicidade.

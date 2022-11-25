@@ -1,6 +1,6 @@
-import java.io.BufferedReader;
+package main;
+
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.Scanner;
@@ -14,7 +14,7 @@ public class Main {
             /*
              * Essa é a maneira de lidar com possíveis erros por falta do arquivo.
              */
-            carregaCadastros("alunos_iniciais.csv", controleAlunos);
+            carregaCadastros("src/alunos_iniciais.csv", controleAlunos);
         } catch (FileNotFoundException e) {
             System.err.println("Arquivo não encontrado: " + e.getMessage());
         } catch (IOException e) {
@@ -31,8 +31,8 @@ public class Main {
     }
 
     private static String menu(Scanner scanner) {
-        System.out.println("\n---\nMENU\n" + "(C)adastrar Aluno\n" + "(E)xibir Aluno\n" + "(N)ovo Grupo\n"
-                + "(A)locar Aluno no Grupo e Verificar pertinência a Grupos\n" + "(O)lhaí quais Grupos o Aluno Tá.\n" +"(S)im, quero Fechar o Programa!\n" + "\n" + "Opção>");
+        System.out.println("\n---\nMENU\n" + "(C)adastrar main.Aluno\n" + "(E)xibir main.Aluno\n" + "(N)ovo main.Grupo\n"
+                + "(A)locar main.Aluno no main.Grupo e Verificar pertinência a Grupos\n" + "(O)lhaí quais Grupos o main.Aluno Tá.\n" +"(S)im, quero Fechar o Programa!\n" + "\n" + "Opção>");
         return scanner.next().toUpperCase();
     }
 
@@ -48,7 +48,7 @@ public class Main {
                 cadastraGrupo(controleAlunos, scanner);
                 break;
             case "A":
-                System.out.println("(A)locar Aluno ou (P)ertinência a Grupo?");
+                System.out.println("(A)locar main.Aluno ou (P)ertinência a main.Grupo?");
                 String option = scanner.next();
                 if(option.toUpperCase(Locale.ROOT).equals("A")) {
                     alocarAluno(controleAlunos, scanner);
@@ -88,7 +88,7 @@ public class Main {
     }
 
     private static void cadastraGrupo(ControleDeAlunos controleAlunos, Scanner scanner) {
-        System.out.print("\nGrupo: ");
+        System.out.print("\nmain.Grupo: ");
         String tema = scanner.next();
         System.out.print("\nTamanho: ");
         int tamanho = scanner.nextInt();
@@ -98,21 +98,21 @@ public class Main {
     private static void alocarAluno(ControleDeAlunos controleAlunos, Scanner scanner) {
         System.out.println("\nMatricula: ");
         String matricula = scanner.next();
-        System.out.println("\nGrupo: ");
+        System.out.println("\nmain.Grupo: ");
         String grupo = scanner. next();
         System.out.println(controleAlunos.alocarAluno(matricula,grupo));
     }
 
     private static void pertinenciaAGrupos(ControleDeAlunos controleAlunos, Scanner scanner) {
-        System.out.println("\nGrupo: ");
+        System.out.println("\nmain.Grupo: ");
         String grupo = scanner.next();
-        System.out.println("\nAluno: ");
+        System.out.println("\nmain.Aluno: ");
         String aluno = scanner.next();
         System.out.println(controleAlunos.pertinenteEmGrupo(grupo,aluno));
     }
 
     private static void exibeGruposDoAluno(ControleDeAlunos controleAlunos, Scanner scanner) {
-        System.out.println("\nAluno: ");
+        System.out.println("\nmain.Aluno: ");
         String matricula = scanner.next();
         controleAlunos.exibeGrupos(matricula);
     }
