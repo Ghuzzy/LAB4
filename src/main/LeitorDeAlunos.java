@@ -16,12 +16,12 @@ public class LeitorDeAlunos {
      * Lê informações de alunos de um arquivo CSV e os cadastra no sistema controle de alunos.
      *
      * @param arquivoAlunos    Caminho para arquivo contendo alunos.
-     * @param controleDeAlunos O sistema de alunos a manipular.
+     * @param controleAlunos O sistema de alunos a manipular.
      * @return O número de alunos adicionados.
      * @throws IOException           Caso não tenhamos permissão de ler o arquivo.
      * @throws FileNotFoundException Caso o arquivo não exista.
      */
-    public int carregaContatos(String arquivoAlunos, ControleDeAlunos controleDeAlunos) throws FileNotFoundException, IOException {
+    public int carregaContatos(String arquivoAlunos, ControleDeAlunos controleAlunos) throws FileNotFoundException, IOException {
         int carregados = 0;
 
         try (BufferedReader br = new BufferedReader(new FileReader(arquivoAlunos))) {
@@ -33,7 +33,7 @@ public class LeitorDeAlunos {
                     continue;
                 }
                 String[] campos = linha.split(",");
-                processaLinhaCsvAlunos(campos, controleDeAlunos);
+                processaLinhaCsvAlunos(campos, controleAlunos);
             }
         }
 

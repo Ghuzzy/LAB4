@@ -8,14 +8,18 @@ public class ControleDeAlunos {
     /**
      * Hashmap que tem como key o tema do grupo e value o próprio grupo.
      */
-    private HashMap<String, Grupo> grupos = new HashMap<String, Grupo>();
+    private HashMap<String, Grupo> grupos;
 
     /**
      * Hashmap que tem como key a matricula do aluno e value o próprio aluno.
      */
-    private HashMap<String, Aluno> alunos = new HashMap<String, Aluno>();
+    private HashMap<String, Aluno> alunos;
 
 
+    public ControleDeAlunos(){
+        this.alunos = new HashMap<String, Aluno>();
+        this.grupos  = new HashMap<String, Grupo>();
+    }
     /**
      * Cadastra um novo aluno no Sistema. Deve retornar que o cadastro foi realizado,
      * ou caso o aluno já esteja cadastrado retornar que a matricula já foi castrada.

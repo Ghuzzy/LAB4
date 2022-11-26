@@ -22,6 +22,14 @@ public class Grupo {
      */
     private int tamanho;
 
+    public Grupo(String tema){
+        Validador validador = new Validador();
+        validador.validaString(tema, "O tema não pode ser nulo ou vazio");
+        this.tema = tema;
+        this.alunos = new HashSet<>();
+        this.tamanho = Integer.MAX_VALUE;
+    }
+
     /**
      * Constrói um grupo recebendo tema e o tamanho do grupo.
      * Caso receba parametros inválidos, deve retornar erro de argumento illegal.
@@ -41,7 +49,7 @@ public class Grupo {
      * Sobrescreve o metodo equals de Object, o qual passa a comparar a igualdade do objeto a partir do tema.
      *
      * @param o
-     * @return boolean: Retorna se os obejtos são diferentes ou iguais.
+     * @return boolean: Retorna se os objetos são diferentes ou iguais.
      */
     @Override
     public boolean equals(Object o) {
@@ -73,6 +81,10 @@ public class Grupo {
         return false;
     }
 
+    public HashSet<Aluno> getAlunos() {
+        return this.alunos;
+    }
+
     /**
      * Adiciona um novo aluno ao grupo.
      *
@@ -91,6 +103,10 @@ public class Grupo {
      */
     @Override
     public String toString() {
-        return "- " + this.tema + " " + this.alunos.size() + "/" + this.tamanho;
+        String resp = "indefinido";
+        if(this.tamanho < Integer.MAX_VALUE){
+            resp = String.valueOf(this.tamanho);
+        }
+        return "- " + this.tema + " " + this.alunos.size() + "/" + resp;
     }
 }

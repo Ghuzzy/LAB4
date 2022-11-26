@@ -14,7 +14,7 @@ public class Main {
             /*
              * Essa é a maneira de lidar com possíveis erros por falta do arquivo.
              */
-            carregaCadastros("src/alunos_iniciais.csv", controleAlunos);
+            carregaCadastros("alunos_iniciais.csv", controleAlunos);
         } catch (FileNotFoundException e) {
             System.err.println("Arquivo não encontrado: " + e.getMessage());
         } catch (IOException e) {
@@ -104,15 +104,15 @@ public class Main {
     }
 
     private static void pertinenciaAGrupos(ControleDeAlunos controleAlunos, Scanner scanner) {
-        System.out.println("\nmain.Grupo: ");
+        System.out.println("\nGrupo: ");
         String grupo = scanner.next();
-        System.out.println("\nmain.Aluno: ");
+        System.out.println("\nAluno: ");
         String aluno = scanner.next();
         System.out.println(controleAlunos.pertinenteEmGrupo(grupo,aluno));
     }
 
     private static void exibeGruposDoAluno(ControleDeAlunos controleAlunos, Scanner scanner) {
-        System.out.println("\nmain.Aluno: ");
+        System.out.println("\nAluno: ");
         String matricula = scanner.next();
         controleAlunos.exibeGrupos(matricula);
     }

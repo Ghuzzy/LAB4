@@ -74,4 +74,16 @@ public class Aluno {
     public String toString(){
         return this.matricula + " - " + this.nome + " - " + this.curso;
     }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
 }
