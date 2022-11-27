@@ -9,18 +9,6 @@ public class Main {
     public static void main(String[] args) {
         ControleDeAlunos controleAlunos = new ControleDeAlunos();
 
-        System.out.println("Carregando cadastros de alunos inicial");
-        try {
-            /*
-             * Essa é a maneira de lidar com possíveis erros por falta do arquivo.
-             */
-            carregaCadastros("alunos_iniciais.csv", controleAlunos);
-        } catch (FileNotFoundException e) {
-            System.err.println("Arquivo não encontrado: " + e.getMessage());
-        } catch (IOException e) {
-            System.err.println("Erro lendo arquivo: " + e.getMessage());
-        }
-
         Scanner scanner = new Scanner(System.in);
         String escolha = "";
         while (true) {
@@ -31,8 +19,8 @@ public class Main {
     }
 
     private static String menu(Scanner scanner) {
-        System.out.println("\n---\nMENU\n" + "(C)adastrar main.Aluno\n" + "(E)xibir main.Aluno\n" + "(N)ovo main.Grupo\n"
-                + "(A)locar main.Aluno no main.Grupo e Verificar pertinência a Grupos\n" + "(O)lhaí quais Grupos o main.Aluno Tá.\n" +"(S)im, quero Fechar o Programa!\n" + "\n" + "Opção>");
+        System.out.println("\n---\nMENU\n" + "(C)adastrar Aluno\n" + "(E)xibir Aluno\n" + "(N)ovo Grupo\n"
+                + "(A)locar Aluno no Grupo e Verificar pertinência a Grupos\n" + "(O)lhaí quais Grupos o Aluno Tá.\n" + "(R)egistrar resposta de aluno.\n" + "(I)mprime histórico de respostas.\n" +"(S)im, quero Fechar o Programa!\n" + "\n" + "Opção>");
         return scanner.next().toUpperCase();
     }
 
@@ -48,7 +36,7 @@ public class Main {
                 cadastraGrupo(controleAlunos, scanner);
                 break;
             case "A":
-                System.out.println("(A)locar main.Aluno ou (P)ertinência a main.Grupo?");
+                System.out.println("(A)locar Aluno ou (P)ertinência a Grupo?");
                 String option = scanner.next();
                 if(option.toUpperCase(Locale.ROOT).equals("A")) {
                     alocarAluno(controleAlunos, scanner);
@@ -59,6 +47,12 @@ public class Main {
             case "O":
                 exibeGruposDoAluno(controleAlunos, scanner);
                 break;
+            case "R":
+                registraRespostaAluno(controleAlunos, scanner);
+                break;
+            case "I":
+                imprimeHistoricoRespostas(controleAlunos);
+                break;
             case "S":
                 sai();
                 break;
@@ -67,6 +61,17 @@ public class Main {
         }
 
     }
+
+    private static void imprimeHistoricoRespostas(ControleDeAlunos controleAlunos) {
+        System.out.print(controleAlunos.imprimirRegistroDeRespostas());
+    }
+
+    private static void registraRespostaAluno(ControleDeAlunos controleAlunos, Scanner scanner) {
+        System.out.print("\nMatricula: ");
+        String matricula = scanner.next();
+        System.out.println(controleAlunos.registrarAlunoQRespondeu(matricula));
+    }
+
 
     private static void cadastraAluno(ControleDeAlunos controleAlunos, Scanner scanner) {
         System.out.print("\nMatricula: ");
@@ -92,7 +97,11 @@ public class Main {
         String tema = scanner.next();
         System.out.print("\nTamanho: ");
         int tamanho = scanner.nextInt();
-        System.out.println(controleAlunos.cadastraGrupo(tema, tamanho));
+        if(tamanho > 0 ) {
+            System.out.println(controleAlunos.cadastraGrupo(tema, tamanho));
+        }else{
+            System.out.println(controleAlunos.cadastraGrupo(tema));
+        }
     }
 
     private static void alocarAluno(ControleDeAlunos controleAlunos, Scanner scanner) {
@@ -114,19 +123,12 @@ public class Main {
     private static void exibeGruposDoAluno(ControleDeAlunos controleAlunos, Scanner scanner) {
         System.out.println("\nAluno: ");
         String matricula = scanner.next();
-        controleAlunos.exibeGrupos(matricula);
+        System.out.println(controleAlunos.exibeGrupos(matricula));
     }
 
     private static void sai() {
         System.out.println("\nVlw flw o/");
         System.exit(0);
-    }
-
-    private static void carregaCadastros(String arquivoContatos, ControleDeAlunos controleAlunos) throws FileNotFoundException, IOException {
-        LeitorDeAlunos leitor = new LeitorDeAlunos();
-
-        int carregados = leitor.carregaContatos(arquivoContatos, controleAlunos);
-        System.out.println("Carregamos " + carregados + " registros.");
     }
 
 

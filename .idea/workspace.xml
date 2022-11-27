@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fa895b9-f691-457f-a6b3-187bb29517ab" name="Changes" comment="first Commit">
-      <change afterPath="$PROJECT_DIR$/tests/AlunoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/ControleDeAlunosTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/GrupoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/ValidadorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab4SamuelCabral.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab4SamuelCabral.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/alunos_inicias.csv" beforeDir="false" afterPath="$PROJECT_DIR$/alunos_inicias.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Aluno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ControleDeAlunos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ControleDeAlunos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Grupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Grupo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/LeitorDeAlunos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/LeitorDeAlunos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/LeitorDeAlunos.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/AlunoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Validador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Validador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ControleDeAlunosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ControleDeAlunosTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,10 +75,50 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GrupoTest">
+  <component name="RunManager" selected="JUnit.All in Lab4SamuelCabral">
     <configuration name="main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="Lab4SamuelCabral" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in Lab4SamuelCabral" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lab4SamuelCabral" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControleDeAlunosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lab4SamuelCabral" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="false" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.ControleDeAlunosTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControleDeAlunosTest.testaAlocarAlunoEstouro" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lab4SamuelCabral" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.ControleDeAlunosTest" />
+      <option name="METHOD_NAME" value="testaAlocarAlunoEstouro" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -102,25 +138,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tests in Lab4SamuelCabral" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Lab4SamuelCabral" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GrupoTest" />
+        <item itemvalue="JUnit.All in Lab4SamuelCabral" />
         <item itemvalue="Application.main.Main" />
-        <item itemvalue="JUnit.tests in Lab4SamuelCabral" />
+        <item itemvalue="JUnit.ControleDeAlunosTest" />
+        <item itemvalue="JUnit.ControleDeAlunosTest.testaAlocarAlunoEstouro" />
+        <item itemvalue="JUnit.GrupoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -154,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668742822037</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="first Commit">
+      <created>1669439316148</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669439316148</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -173,12 +204,17 @@
     <option name="LAST_COMMIT_MESSAGE" value="first Commit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/LAB4$main_Main.ic" NAME="main.Main Coverage Results" MODIFIED="1669419200206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/LAB4$All_in_Lab4SamuelCabral.ic" NAME="All in Lab4SamuelCabral Coverage Results" MODIFIED="1669589703932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/LAB4$main_Main.ic" NAME="main.Main Coverage Results" MODIFIED="1669584903969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/LAB4$ControleDeAlunosTest_testaAlocarAlunoEstouro.ic" NAME="ControleDeAlunosTest.testaAlocarAlunoEstouro Coverage Results" MODIFIED="1669581415645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>tests.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/LAB4$tests_in_Lab4SamuelCabral.ic" NAME="tests in Lab4SamuelCabral Coverage Results" MODIFIED="1669414193833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>tests.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/LAB4$GrupoTest.ic" NAME="GrupoTest Coverage Results" MODIFIED="1669422378398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/LAB4$GrupoTest.ic" NAME="GrupoTest Coverage Results" MODIFIED="1669580770415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>tests.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/LAB4$ControleDeAlunosTest.ic" NAME="ControleDeAlunosTest Coverage Results" MODIFIED="1669585036816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

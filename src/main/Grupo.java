@@ -1,5 +1,6 @@
 package main;
 
+import com.sun.jdi.IntegerValue;
 import utils.Validador;
 
 import java.util.HashSet;
@@ -22,6 +23,12 @@ public class Grupo {
      */
     private int tamanho;
 
+    /**
+     * Constrói um grupo recebendo tema do grupo.
+     * Caso receba parametros inválidos, deve retornar erro de argumento illegal.
+     *
+     * @param tema: tema do grupo
+     */
     public Grupo(String tema){
         Validador validador = new Validador();
         validador.validaString(tema, "O tema não pode ser nulo ou vazio");
@@ -90,10 +97,15 @@ public class Grupo {
      *
      * @param aluno: aluno a ser cadastrado.
      */
-    public void adicionaAluno(Aluno aluno) {
-        if(this.alunos.size() < this.tamanho) {
+    public String adicionaAluno(Aluno aluno) {
+        String resp = "";
+        if((this.alunos.size() < this.tamanho)) {
             this.alunos.add(aluno);
+            resp = "ALUNO ALOCADO!";
+        }else {
+            resp = "ALUNO NÃO ALOCADO DEVIDO AO LIMITE DE TAMANHO!";
         }
+        return resp;
     }
 
     /**
