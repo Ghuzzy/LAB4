@@ -93,7 +93,7 @@ public class Main {
     }
 
     private static void cadastraGrupo(ControleDeAlunos controleAlunos, Scanner scanner) {
-        System.out.print("\nmain.Grupo: ");
+        System.out.print("\nGrupo: ");
         String tema = scanner.next();
         System.out.print("\nTamanho: ");
         int tamanho = scanner.nextInt();
@@ -107,7 +107,7 @@ public class Main {
     private static void alocarAluno(ControleDeAlunos controleAlunos, Scanner scanner) {
         System.out.println("\nMatricula: ");
         String matricula = scanner.next();
-        System.out.println("\nmain.Grupo: ");
+        System.out.println("\nGrupo: ");
         String grupo = scanner. next();
         System.out.println(controleAlunos.alocarAluno(matricula,grupo));
     }
@@ -127,7 +127,7 @@ public class Main {
     }
 
     private static void sai() {
-        System.out.println("\nVlw flw o/");
+        System.out.println("\nAté mais!");
         System.exit(0);
     }
 

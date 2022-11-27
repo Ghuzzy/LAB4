@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fa895b9-f691-457f-a6b3-187bb29517ab" name="Changes" comment="first Commit">
-      <change afterPath="$PROJECT_DIR$/tests/ValidadorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ControleDeAlunos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ControleDeAlunos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Grupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Grupo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/LeitorDeAlunos.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Validador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Validador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ControleDeAlunosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ControleDeAlunosTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669439316148</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="first Commit">
+      <created>1669592664366</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669592664366</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -204,7 +204,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="first Commit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/LAB4$All_in_Lab4SamuelCabral.ic" NAME="All in Lab4SamuelCabral Coverage Results" MODIFIED="1669589703932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/LAB4$All_in_Lab4SamuelCabral.ic" NAME="All in Lab4SamuelCabral Coverage Results" MODIFIED="1669592615960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/LAB4$main_Main.ic" NAME="main.Main Coverage Results" MODIFIED="1669584903969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/LAB4$ControleDeAlunosTest_testaAlocarAlunoEstouro.ic" NAME="ControleDeAlunosTest.testaAlocarAlunoEstouro Coverage Results" MODIFIED="1669581415645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>tests.*</FILTER>
